@@ -1,7 +1,7 @@
 import { i18n } from '../../common/i18n';
 import { IResponse } from './types';
 
-export const transformResponse = <T = any>(res: IResponse<T>): T => {
+export const transformResponse = <T extends Record<string, any> = any>(res: IResponse<T>): T => {
   if (res?.status === 'OK') {
     return res?.data;
   }
